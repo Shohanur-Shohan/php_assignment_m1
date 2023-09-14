@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+</head>
+<body>
+
+<div>
+    <form method="post">
+       <label for="number">Enter a Numvber:</label>
+        <input type="number" name="number"/> 
+    </form>
+
+    <?php
+    
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $inputNum = $_POST['number'];
+        $result = calculate($inputNum);
+
+        echo "<p>$inputNum</p><p>$result</p>";
+    }
+
+    function calculate($inputNum){
+
+        if($inputNum%2==0){
+            return 'is a even numver';          
+        }else{
+            return 'is a  even numver';
+        }
+    }
+
+
+
+    ?>
+    
+</div>
+
+</body>
+</html>
